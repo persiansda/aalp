@@ -3,5 +3,7 @@
     <AHeader />
 
     <slot />
+
+    <AFooter />
   </div>
 </template>
