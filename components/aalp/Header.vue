@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+  <header class="w-full fixed backdrop-blur bg-white/25" style="z-index: 9999;">
+    <nav class="border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
       <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <NuxtLink :to="{ name: 'index' }" class="flex items-center">
           <img width="50" height="50" src="/assets/images/logo.png" alt="Aalp Logo">
