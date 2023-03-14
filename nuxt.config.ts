@@ -43,12 +43,14 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/devtools',
     '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
   ],
 
   colorMode: {
     hid: 'color-mode-script',
     globalName: '__COLOR_MODE__',
-    storageKey: 'color-mode',
+    storageKey: 'mode',
+    classSuffix: '',
   },
 
   nitro: {
