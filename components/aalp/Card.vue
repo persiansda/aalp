@@ -24,7 +24,7 @@ defineProps({
 </script>
 
 <template>
-  <div :class="[{ 'text-center': centered }]" class="max-w-sm bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all dark:bg-gray-800 mb-10">
+  <div :class="[{ 'text-center': centered }]" class="max-w-sm bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all dark:bg-gray-800 m-auto mb-10">
     <NuxtLink :to="url">
       <img class="rounded-t-lg w-full" src="https://demo.persiansda.com/assets/images/story01.png" :alt="title">
     </NuxtLink>
