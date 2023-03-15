@@ -13,5 +13,11 @@ export default <Partial<Config>>{
     './error.{ts,vue}',
   ],
   darkMode: 'class',
-  theme: {},
+  theme: {
+    extend: {
+      zIndex: {
+        999: '999',
+      },
+    },
+  },
 }
