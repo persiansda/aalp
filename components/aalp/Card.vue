@@ -1,48 +1,29 @@
 <script lang="ts" setup>
+import type { Card } from '~~/types/card'
+
 defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  image: {
-    type: String,
-    required: true,
-  },
-  imageAlt: {
-    type: String,
+  item: {
+    type: Object as PropType<Card>,
     default: null,
-    required: false,
-  },
-  url: {
-    type: String,
-    required: true,
-  },
-  centered: {
-    type: Boolean,
-    required: false,
   },
 })
 </script>
 
 <template>
-  <div :class="[{ 'text-center': centered }]" class="max-w-sm bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all dark:bg-gray-800 m-auto mb-10">
-    <NuxtLink :to="url">
-      <img class="rounded-t-lg w-full" :src="image" :alt="imageAlt ?? title">
+  <div :class="[{ 'text-center': item.centered }]" class="max-w-sm bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all dark:bg-gray-800 m-auto mb-10">
+    <NuxtLink :to="item.url">
+      <img class="rounded-t-lg w-full" :src="item.image" :alt="item.imageAlt ?? item.title">
     </NuxtLink>
     <div class="p-5">
-      <NuxtLink :to="url">
+      <NuxtLink :to="item.url">
         <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {{ title }}
+          {{ item.title }}
         </h5>
       </NuxtLink>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        {{ description }}
+      <p v-if="item.description" class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        {{ item.description }}
       </p>
-      <NuxtLink :to="url" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      <NuxtLink :to="item.url" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
         Read more
         <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
       </NuxtLink>
