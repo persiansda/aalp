@@ -3,7 +3,7 @@
     <div class="w-full mx-auto container md:py-6 py-4 md:flex md:items-center md:justify-between">
       <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © {{ new Date().getFullYear() }}
-        <NuxtLink :to="{ name: 'index' }" class="hover:underline">
+        <NuxtLink to="/" class="hover:underline">
           Aalp
         </NuxtLink>
         All Rights Reserved.

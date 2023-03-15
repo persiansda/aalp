@@ -33,6 +33,11 @@ export default defineNuxtConfig({
     dirs: [
       {
         global: true,
+        path: resolve('./components/app'),
+        prefix: 'app',
+      },
+      {
+        global: true,
         path: resolve('./components/aalp'),
         prefix: 'a',
       },
@@ -41,10 +46,23 @@ export default defineNuxtConfig({
 
   modules: [
     'nuxt-icon',
+    '@nuxt/content',
     '@nuxt/devtools',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
   ],
+
+  content: {
+    documentDriven: true,
+    highlight: {
+      theme: {
+        default: 'one-dark-pro',
+      },
+    },
+    navigation: {
+      fields: ['title', 'icon', '_path'],
+    },
+  },
 
   colorMode: {
     hid: 'color-mode-script',
