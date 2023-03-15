@@ -90,9 +90,7 @@ const onSlideChange = (swiper: any) => {
       background-color: var(--aalp-hero-color);
       transition: all 0.3s ease;
   }
-}
-
-.left_icon {
+  .left_icon {
     position: absolute;
     left: 15px;
     bottom: 70px;
@@ -204,5 +202,6 @@ const onSlideChange = (swiper: any) => {
     list-style: none;
     z-index: 999;
   }
+}
 }
 </style>
