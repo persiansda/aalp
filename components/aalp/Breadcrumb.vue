@@ -37,13 +37,12 @@ const paths = computed(() => {
             </NuxtLink>
           </li>
           <template v-for="(item, index) in paths" :key="index">
-            <Icon v-if="item.active" name="uil:angle-right" />
+            <Icon name="uil:angle-right" />
             <li class="inline-flex items-center capitalize">
               <NuxtLink :class="item.active ? 'text-gray-500' : 'text-gray-700 hover:text-blue-600  dark:hover:text-white'" :to="item.url" class="text-sm font-medium dark:text-gray-400">
                 {{ item.name }}
               </NuxtLink>
             </li>
-            <Icon v-if="!item.active" name="uil:angle-right" />
           </template>
         </ol>
       </div>
