@@ -17,3 +17,10 @@ onBeforeUnmount(() => window.removeEventListener('scroll', getScrollPosition))
     <AScrollToTop />
   </div>
 </template>
+
+<style lang="scss">
+:root {
+  --aalp-color-primary: #125251;
+  --aalp-color-secondary: #ffbf1d;
+}
+</style>

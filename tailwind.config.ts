@@ -15,6 +15,10 @@ export default <Partial<Config>>{
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        primary: 'var(--aalp-color-primary)',
+        secondary: 'var(--aalp-color-secondary)',
+      },
       zIndex: {
         999: '999',
       },
