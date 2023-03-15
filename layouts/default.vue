@@ -5,5 +5,7 @@
     <slot />
 
     <AFooter />
+
+    <AScrollToTop />
   </div>
 </template>
