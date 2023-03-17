@@ -10,7 +10,7 @@ const { navigation } = useContent()
 </script>
 
 <template>
-  <header :class="{ 'backdrop-blur-xl': scrollPosition > 17 }" class="w-full fixed top-0 bg-white/10" style="z-index: 9999;">
+  <header :class="{ 'backdrop-blur-xl': scrollPosition > 17 }" class="w-full fixed top-0" style="z-index: 9999;">
     <nav class="border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
       <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
         <NuxtLink to="/" class="flex items-center">
