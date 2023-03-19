@@ -10,6 +10,8 @@ onBeforeUnmount(() => window.removeEventListener('scroll', getScrollPosition))
   <div>
     <AHeader :scroll-position="scrollPosition" />
 
+    <ABackground />
+
     <slot />
 
     <AFooter />
