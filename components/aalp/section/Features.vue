@@ -35,7 +35,7 @@ defineProps({
     <div class="container px-4 mx-auto">
       <div class="md:flex items-center justify-center">
         <div class="w-full md:w-1/2 p-8 relative">
-          <img :src="image" :alt="`${highlight ?? ''} ${title}`">
+          <img class="animate-hover" :src="image" :alt="`${highlight ?? ''} ${title}`">
           <div v-if="secondaryImage" class="absolute top-1/4 right-28 rounded-2xl">
             <img src="https://demo.persiansda.com/assets/images/about-screen.png" alt="">
             <!-- transform hover:-translate-y-16 transition ease-in-out duration-1000 -->
@@ -55,3 +55,21 @@ defineProps({
     </div>
   </section>
 </template>
+
+<style lang="scss">
+.animate-hover{
+  animation: hover 3s linear infinite;
+}
+
+@keyframes hover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+</style>
