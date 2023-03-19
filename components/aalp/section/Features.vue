@@ -27,6 +27,11 @@ defineProps({
     required: false,
     default: false,
   },
+  features: {
+    type: Array as PropType<{ name: string }[]>,
+    required: false,
+    default: null,
+  },
 })
 </script>
 
@@ -49,6 +54,11 @@ defineProps({
             <p class="text-lg">
               {{ description }}
             </p>
+            <div v-if="features" class="grid grid-cols-2">
+              <div v-for="item in features" :key="item.name" class="card shadow-xl p-5 m-3 rounded-lg">
+                {{ item.name }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
