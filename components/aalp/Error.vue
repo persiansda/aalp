@@ -41,7 +41,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex items-center justify-center w-full bg-white">
+  <div class="flex items-center justify-center w-full">
     <div class="text-center">
       <div v-if="icon" :class="`bg-${color}-100`" class="inline-flex rounded-full p-4">
         <div :class="`bg-${color}-200`" class="rounded-full p-4">
