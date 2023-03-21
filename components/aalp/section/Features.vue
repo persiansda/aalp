@@ -36,7 +36,7 @@ defineProps({
 </script>
 
 <template>
-  <section class="relative py-32 bg-white overflow-hidden">
+  <section :dir="reverse ? 'rtl' : 'ltr'" class="relative py-32 bg-white overflow-hidden">
     <div class="container px-4 mx-auto">
       <div class="md:flex items-center justify-center">
         <div class="w-full md:w-1/2 p-8 relative">
@@ -46,7 +46,7 @@ defineProps({
             <!-- transform hover:-translate-y-16 transition ease-in-out duration-1000 -->
           </div>
         </div>
-        <div class="w-full md:w-1/3">
+        <div dir="ltr" class="w-full md:w-1/3">
           <div class="block">
             <h2 class="mb-6 text-primary text-5xl font-bold font-heading tracking-px-n leading-tight">
               <span v-if="highlight" class="text-secondary">{{ highlight }}</span> {{ title }}
