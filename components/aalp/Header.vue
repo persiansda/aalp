@@ -6,6 +6,8 @@ defineProps({
   },
 })
 
+const aalp = useAalp()
+
 const { navigation } = useContent()
 </script>
 
@@ -17,8 +19,8 @@ const { navigation } = useContent()
           <img width="50" height="50" src="/assets/images/logo.png" alt="Aalp Logo">
         </NuxtLink>
         <div class="flex items-center lg:order-2">
-          <NuxtLink href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
-            Link
+          <NuxtLink v-for="item in aalp.socials" :key="item.url" :title="item.title" :to="item.url" :target="item.target" class="text-gray-800 font-medium rounded-lg text-sm mx-4">
+            <Icon :name="item.icon" />
           </NuxtLink>
           <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
             <span class="sr-only">Menu</span>
