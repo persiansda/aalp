@@ -6,6 +6,48 @@ export default defineNuxtConfigSchema({
      * @studio-icon material-symbols:docs
      */
     aalp: {
+      screens: {
+        $schema: {
+          type: 'array',
+          required: ['title', 'icon'],
+          items: {
+            type: 'object',
+            properties: {
+              title: {
+                type: 'string',
+                description: 'Title of the page',
+              },
+              icon: {
+                type: 'object',
+                required: ['path', 'type'],
+                properties: {
+                  carousel: {
+                    type: 'boolean',
+                    default: true,
+                    description: 'Show icon in carousel',
+                  },
+                  path: {
+                    type: 'string',
+                    description: 'Path to the icon',
+                  },
+                  type: {
+                    type: 'string',
+                    description: 'Type of the icon',
+                  },
+                },
+              },
+              images: {
+                type: 'array',
+                items: {
+                  type: 'string',
+                },
+                description: 'Path to the screens images',
+              },
+            },
+          },
+        },
+      },
+
       /**
        * Social links
        *
