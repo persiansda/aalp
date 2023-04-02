@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay } from 'swiper'
 
 const modules = [Autoplay]
+
+const arch = useAalp()
+const screens = computed(() => arch.value.screens?.filter(screen => screen.icon?.carousel))
 </script>
 
 <template>
@@ -22,9 +25,10 @@ const modules = [Autoplay]
         :free-mode="false"
         :speed="1300"
       >
-        <SwiperSlide v-for="i in 24" :key="i">
+        <SwiperSlide v-for="item in screens" :key="item?.title">
           <div class="mx-5">
-            <img width="50" src="https://demo.persiansda.com/assets/icons/pages/fingerprint.png">
+            <img v-if="item.icon?.type === 'png'" width="50" :src="`${item.icon?.path}.${item.icon?.type}`">
+            <Icon v-else-if="item.icon?.type === 'icon'" :name="`${item.icon!.path}`" />
           </div>
         </SwiperSlide>
       </Swiper>
