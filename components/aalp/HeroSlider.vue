@@ -126,7 +126,7 @@ const onSlideChange = (swiper: any) => {
       position: absolute;
       left: 5px;
       top: 5px;
-      background-color: #fafdfc;
+      background-color: #fafafa;
       width: calc(100% - 10px);
       height: 98%;
       border-radius: 50px;
