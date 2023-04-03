@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 const scrollPosition = ref(0)
 
-const getScrollPosition = () => scrollPosition.value = window.scrollY
+function getScrollPosition() {
+  return scrollPosition.value = window.scrollY
+}
 onMounted(() => window.addEventListener('scroll', getScrollPosition))
 onBeforeUnmount(() => window.removeEventListener('scroll', getScrollPosition))
 </script>
@@ -46,5 +48,22 @@ onBeforeUnmount(() => window.removeEventListener('scroll', getScrollPosition))
 .slide-up-enter-from,
 .slide-up-leave-to {
   transform: translateY(100%);
+}
+
+img {
+  // no select
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  // no drag
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  user-drag: none;
 }
 </style>

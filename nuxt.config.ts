@@ -18,10 +18,6 @@ export default defineNuxtConfig({
     '~aalp': resolve('./'),
   },
 
-  css: [
-    resolve('./assets/scss/style.scss'),
-  ],
-
   router: {
     options: {
       linkActiveClass: 'active',
@@ -69,6 +65,10 @@ export default defineNuxtConfig({
     globalName: '__COLOR_MODE__',
     storageKey: 'mode',
     classSuffix: '',
+  },
+
+  tailwindcss: {
+    viewer: false,
   },
 
   nitro: {
