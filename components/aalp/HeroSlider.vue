@@ -20,16 +20,16 @@ const currentIndex = ref(0)
 
 const modules = [Navigation, Pagination]
 
-const onSlideChange = (swiper: any) => {
+function onSlideChange(swiper: any) {
   currentIndex.value = swiper.activeIndex
 }
 </script>
 
 <template>
   <section>
-    <div class="grid max-w-screen-xl px-4 py-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
-      <div class="m-auto place-self-center lg:col-span-7">
-        <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+    <div grid max-w-screen-xl p-4 mx-auto xl:gap-0 lg="gap-8 grid-cols-12">
+      <div m-auto place-self-center lg="col-span-7">
+        <h1 max-w-2xl mb-4 font-extrabold tracking-tight leading-none text-4xl md:text-5xl xl-text-6xl text-base>
           Title
         </h1>
         <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
@@ -52,7 +52,6 @@ const onSlideChange = (swiper: any) => {
 
         <Swiper
           id="frmae_slider"
-          ref="carouselTest"
           :dir="direction"
           :modules="modules"
           navigation

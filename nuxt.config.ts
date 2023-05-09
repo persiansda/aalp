@@ -18,13 +18,6 @@ export default defineNuxtConfig({
     '~aalp': resolve('./'),
   },
 
-  router: {
-    options: {
-      linkActiveClass: 'active',
-      linkExactActiveClass: 'active',
-    },
-  },
-
   components: {
     dirs: [
       {
@@ -42,11 +35,17 @@ export default defineNuxtConfig({
 
   modules: [
     'nuxt-icon',
+    '@unocss/nuxt',
+    '@vueuse/nuxt',
     '@nuxt/content',
     '@nuxt/devtools',
     '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
+    // '@nuxtjs/tailwindcss',
   ],
+
+  unocss: {
+    configFile: resolve('./uno.config.ts'),
+  },
 
   content: {
     documentDriven: true,
@@ -67,9 +66,9 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
-  tailwindcss: {
-    viewer: false,
-  },
+  // tailwindcss: {
+  //   viewer: false,
+  // },
 
   nitro: {
     esbuild: {

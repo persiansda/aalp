@@ -1,31 +1,28 @@
 <script lang="ts" setup>
 import type { Card } from '~~/types/card'
 
-defineProps({
-  item: {
-    type: Object as PropType<Card>,
-    default: null,
-  },
-})
+defineProps<{
+  item: Partial<Card>
+}>()
 </script>
 
 <template>
-  <div :class="[{ 'text-center': item.centered }]" class="max-w-sm bg-white rounded-lg shadow-xl hover:shadow-2xl transition-all dark:bg-gray-800 m-auto mb-10">
+  <div :class="[{ 'text-center': item.centered }]" max-w-sm bg-base rounded-lg shadow-xl hover="shadow-2xl" transition-all m-auto mb-10>
     <NuxtLink :to="item._path">
-      <img class="rounded-t-lg w-full" :src="item.image" :alt="item.imageAlt ?? item.title">
+      <img rounded-t-lg w-full :src="item.image" :alt="item.imageAlt ?? item.title">
     </NuxtLink>
-    <div class="p-5">
+    <div p-5>
       <NuxtLink :to="item._path">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white>
           {{ item.title }}
         </h5>
       </NuxtLink>
-      <p v-if="item.description" class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <p v-if="item.description" mb-3 font-normal text-gray-700 dark:text-gray-400>
         {{ item.description }}
       </p>
       <NuxtLink :to="item._path" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
         Read more
-        <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+        <AIcon name="uil-arrow-right" />
       </NuxtLink>
     </div>
   </div>

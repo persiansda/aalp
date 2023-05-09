@@ -18,7 +18,7 @@ const fetchData = props.fetch ? await useAsyncData(props.fetch!.key, () => query
 </script>
 
 <template>
-  <div :class="{ 'grid grid-cols-3': grid }">
+  <div grid="~ md:cols-3">
     <template v-if="fetch">
       <component :is="fetch?.component" v-for="item in fetchData?.data.value" :key="item._id" :item="item" />
     </template>

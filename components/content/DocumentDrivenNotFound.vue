@@ -11,11 +11,7 @@ useHead({
 </script>
 
 <template>
-  <div class="p-48">
+  <div p-48>
     <AError code="404" title="Page not found" message="This is not the page you're looking for." icon="uil:file" />
   </div>
 </template>
-
-<style lang="scss">
-
-</style>

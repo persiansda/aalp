@@ -12,9 +12,9 @@ const screens = computed(() => arch.value.screens?.filter(screen => screen.icon?
 </script>
 
 <template>
-  <div class="container mx-auto px-28">
-    <div class="icon-carousel bg-white drop-shadow-xl py-8 rounded-xl -m-10 z-999 relative">
-      <div class="fade-shadow rounded-xl right" />
+  <div container mx-auto px-28>
+    <div class="icon-carousel " relative bg-base drop-shadow-xl py-8 m--10 z-999 rounded-xl>
+      <div class="fade-shadow" rounded-xl bg-fade="r"  />
       <Swiper
         :modules="modules"
         :slides-per-view="8"
@@ -26,13 +26,13 @@ const screens = computed(() => arch.value.screens?.filter(screen => screen.icon?
         :speed="1300"
       >
         <SwiperSlide v-for="item in screens" :key="item?.title">
-          <div class="mx-5">
+          <div mx-5>
             <img v-if="item.icon?.type === 'png'" width="50" :src="`${item.icon?.path}.${item.icon?.type}`">
             <Icon v-else-if="item.icon?.type === 'icon'" :name="`${item.icon!.path}`" />
           </div>
         </SwiperSlide>
       </Swiper>
-      <div class="fade-shadow rounded-xl left" />
+      <div class="fade-shadow" rounded-xl bg-fade="l" />
     </div>
   </div>
 </template>
@@ -45,23 +45,24 @@ const screens = computed(() => arch.value.screens?.filter(screen => screen.icon?
 
   .fade-shadow {
     &.left {
-      background: linear-gradient(to left, hsla(0, 0%, 100%, 0) 0, #fff 100%);
+      // background: linear-gradient(to left, hsla(0, 0%, 100%, 0) 0, #fff 100%);
       left: 0;
       width: 20%;
     }
 
     &.right {
-      background: linear-gradient(to right, hsla(0, 0%, 100%, 0) 0, #fff 100%);
+      // background: linear-gradient(to right, hsla(0, 0%, 100%, 0) 0, #fff 100%);
+      @apply bg-gradient-to-r from-primary to-secondary;
       right: 0;
       width: 20%;
     }
 
-    bottom: 0;
-    height: 100%;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    z-index: 9
+    // bottom: 0;
+    // height: 100%;
+    // pointer-events: none;
+    // position: absolute;
+    // top: 0;
+    // z-index: 9
   }
 }
 </style>

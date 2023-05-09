@@ -8,9 +8,9 @@ function scrollToTop() {
 </script>
 
 <template>
-  <div class="fixed bottom-4 right-4 z-999">
-    <button class="bg-primary shadow-lg transition-all text-white py-2 px-3 rounded-full" @click="scrollToTop">
-      <Icon name="tabler:chevron-up" class="w-4 h-4 mb-1" />
+  <div fixed bottom-4 right-4 z-999>
+    <button bg-primary shadow-lg transition-all text-white py-2 px-3 rounded-full @click="scrollToTop">
+      <Icon name="tabler:chevron-up" w-4 h-4 mb-1 />
     </button>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
-  <div class="grid place-items-center">
-    <div class="w-2/3 bg-white -mt-24 py-10 px-6 rounded-lg shadow-xl">
+  <div grid place-items-center>
+    <div bg-base class="w-2/3 -mt-24 py-10 px-6 rounded-lg shadow-xl">
       <!-- TODO: add info cards -->
       <form action="#" method="POST">
         <div class="grid grid-cols-1 gap-y-6 gap-x-8 sm:grid-cols-2">

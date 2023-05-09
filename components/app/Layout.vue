@@ -1,15 +1,11 @@
 <script lang="ts" setup>
-const scrollPosition = ref(0)
+import '@unocss/reset/tailwind.css'
 
-function getScrollPosition() {
-  return scrollPosition.value = window.scrollY
-}
-onMounted(() => window.addEventListener('scroll', getScrollPosition))
-onBeforeUnmount(() => window.removeEventListener('scroll', getScrollPosition))
+const { y: scrollPosition } = useWindowScroll()
 </script>
 
 <template>
-  <div>
+  <div bg-base>
     <AHeader :scroll-position="scrollPosition" />
 
     <ABackground />
@@ -24,12 +20,7 @@ onBeforeUnmount(() => window.removeEventListener('scroll', getScrollPosition))
   </div>
 </template>
 
-<style lang="scss">
-:root {
-  --aalp-color-primary: #125251;
-  --aalp-color-secondary: #ffbf1d;
-}
-
+<style>
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.4s;
@@ -39,7 +30,6 @@ onBeforeUnmount(() => window.removeEventListener('scroll', getScrollPosition))
   opacity: 0;
 }
 
-// slide-up
 .slide-up-enter-active,
 .slide-up-leave-active {
   transition: all 0.4s;
@@ -51,7 +41,6 @@ onBeforeUnmount(() => window.removeEventListener('scroll', getScrollPosition))
 }
 
 img {
-  // no select
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -59,7 +48,6 @@ img {
   -ms-user-select: none;
   user-select: none;
 
-  // no drag
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
